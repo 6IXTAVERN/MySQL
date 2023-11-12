@@ -32,7 +32,7 @@
   Таблица "client"
 </h3>
 <p align="center">
-  <img alt="client" src="https://github.com/6IXTAVERN/TestingMD/assets/116119822/b6eaeeb5-2997-45ca-a44f-842c443a0683"> 
+  <img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/29365308-7e08-4309-90b3-bb3431489e97"> 
 </p>
 
 <h3 align="center">
@@ -40,7 +40,7 @@
   Таблица "comfortable"
 </h3>
 <p align="center">
-  <img alt="comfortable" src="https://github.com/6IXTAVERN/TestingMD/assets/116119822/d719a910-c655-4232-811f-cee8759ad6f7"> 
+  <img alt="comfortable" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/ec3959fd-f5b7-48a3-bc2c-5955b500a8ee"> 
 </p>
 
 <h3 align="center">
@@ -48,7 +48,7 @@
   Таблица "living"
 </h3>
 <p align="center">
-  <img alt="living" src="https://github.com/6IXTAVERN/TestingMD/assets/116119822/8befca82-5050-4950-8dba-e18082802d84"> 
+  <img alt="living" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/400177e6-17ab-4818-b460-f1f5fb25edae"> 
 </p>
 
 <h3 align="center">
@@ -56,7 +56,7 @@
   Таблица "reservation"
 </h3>
 <p align="center">
-  <img alt="reservation" src="https://github.com/6IXTAVERN/TestingMD/assets/116119822/7dc3c44e-d8f9-4197-af94-78fcb3c0d2f4"> 
+  <img alt="reservation" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/9e0ddafd-81b5-4875-8adf-9a82035aad50"> 
 </p>
 
 <h3 align="center">
@@ -64,6 +64,6 @@
   Таблица "room"
 </h3>
 <p align="center">
-  <img alt="room" src="https://github.com/6IXTAVERN/TestingMD/assets/116119822/c933ce97-4ef1-446b-9054-5c6dd892ca79"> 
+  <img alt="room" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/482296d3-7766-4282-afb2-a79fe97d1156"> 
 </p>
 
