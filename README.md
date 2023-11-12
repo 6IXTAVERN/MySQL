@@ -6,13 +6,13 @@
 </p>
 
 
-# <img src="https://github.com/6IXTAVERN/TestingMD/assets/116119822/c3b764d6-c2ef-4b9e-890d-ecc524c862b8" width="20" height="20"/> Lab1
+# <img src="https://github.com/6IXTAVERN/TestingMD/assets/116119822/c3b764d6-c2ef-4b9e-890d-ecc524c862b8.png" width="20" height="20"/> Lab1
 <h3 align="center">
   <a href="#er-model"></a>
   ER модель
 </h3>
 <p align="center">
-  <img alt="ER model" src="https://github.com/6IXTAVERN/TestingMD/assets/116119822/607441b7-503c-488d-9a52-cea4051e8474"> 
+  <img alt="ER model" src="https://github.com/6IXTAVERN/TestingMD/assets/116119822/607441b7-503c-488d-9a52-cea4051e8474.png"> 
 </p>
 
 <h3 align="center">
@@ -20,7 +20,7 @@
   Реляционная модель
 </h3>
 <p align="center">
-  <img alt="Relational model" src="https://github.com/6IXTAVERN/TestingMD/assets/116119822/e064ee51-3f81-4e73-86c9-546c36dd731d"> 
+  <img alt="Relational model" src="https://github.com/6IXTAVERN/TestingMD/assets/116119822/e064ee51-3f81-4e73-86c9-546c36dd731d.png"> 
 </p>
 
 
