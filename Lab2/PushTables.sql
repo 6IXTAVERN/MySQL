@@ -62,68 +62,6 @@
 #SELECT * FROM reservation
 
 
-#LAB3
-
-#1.1
-#select *
-#from client
-#order by full_name;
-
-#select  *
-#from reservation
-#order by date_arrival DESC;
-
-#select *
-#from reservation
-#order by date_arrival;
-
-#1.2
-#select *
-#from room
-#where floor=1;
-
-#select *
-#from room
-#where floor=2;
-
-#select *
-#from reservation
-#where nutrition=1 and date_arrival<'2022-10-20';
-
-#1.3
-#select count(*)
-#from client;
-
-#select sum(price) as SUM
-#from comfortable;
-
-#select count(*) 
-#from reservation
-#where nutrition;
-
-#select count(*) 
-#from reservation
-#where nutrition is NULL;
-
-#1.4
-#select floor, COUNT(*) AS FloorsCount
-#from room
-#GROUP BY floor;
-
-#select id_comfortable, floor, COUNT(*) 
-#from room
-#GROUP BY id_comfortable, floor with ROllUP;
-
-#1.5
-#select *
-#from client
-#WHERE passport LIKE N'%1';
-
-#select *
-#from client
-#WHERE full_name LIKE N'%ович%';
-
-
 
 
 
