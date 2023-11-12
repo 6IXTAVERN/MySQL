@@ -1,4 +1,4 @@
-<h1 align="center"><a href=""><img src="https://github.com/6IXTAVERN/TestingMD/assets/116119822/c3b764d6-c2ef-4b9e-890d-ecc524c862b8" width="20" height="20"/></a> MySQL</h1>
+<h1 align="center"><a href=""><img src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2c2fe8b2-aba7-4fb0-bc48-6899135c5613" width="20" height="20"/></a> MySQL</h1>
 
 <p align="center">
   <a href="#-lab1"><img alt="lab1" src="https://img.shields.io/badge/Lab1-blue"></a> 
@@ -6,7 +6,7 @@
 </p>
 
 
-# <img src="https://github.com/6IXTAVERN/TestingMD/assets/116119822/c3b764d6-c2ef-4b9e-890d-ecc524c862b8" width="20" height="20"/> Lab1
+# <img src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2c2fe8b2-aba7-4fb0-bc48-6899135c5613" width="20" height="20"/> Lab1
 <h3 align="center">
   <a href="#er-model"></a>
   ER модель
@@ -24,7 +24,7 @@
 </p>
 
 
-# <img src="https://github.com/6IXTAVERN/TestingMD/assets/116119822/c3b764d6-c2ef-4b9e-890d-ecc524c862b8" width="20" height="20"/> Lab2
+# <img src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2c2fe8b2-aba7-4fb0-bc48-6899135c5613" width="20" height="20"/> Lab2
 Скрипт для создания таблиц(Script.sql) + команды для выполнения(PushTables.sql) хранятся в Lab2
 
 <h3 align="center">
