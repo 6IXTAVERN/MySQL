@@ -12,7 +12,7 @@
   ER модель
 </h3>
 <p align="center">
-  <img alt="ER model" src="https://user-images.githubusercontent.com/61329159/197364522-ffdb607c-f634-4ddd-a234-7ccc3833d8b6.png"> 
+  <img alt="ER model" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/d771a6a3-c421-43ab-a784-2d446bc23e68"> 
 </p>
 
 <h3 align="center">
