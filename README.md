@@ -12,7 +12,7 @@
   ER модель
 </h3>
 <p align="center">
-  <img alt="ER model" src="https://github.com/6IXTAVERN/TestingMD/assets/116119822/607441b7-503c-488d-9a52-cea4051e8474.png"> 
+  <img alt="ER model" src="https://user-images.githubusercontent.com/61329159/197364522-ffdb607c-f634-4ddd-a234-7ccc3833d8b6.png"> 
 </p>
 
 <h3 align="center">
