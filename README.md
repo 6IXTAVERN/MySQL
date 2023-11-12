@@ -12,7 +12,7 @@
   ER модель
 </h3>
 <p align="center">
-  <img alt="ER model" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/d771a6a3-c421-43ab-a784-2d446bc23e68"> 
+  <img alt="ER model" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/6f2c9756-b4c0-4beb-b64f-a46ad71dddc6"> 
 </p>
 
 <h3 align="center">
@@ -20,7 +20,7 @@
   Реляционная модель
 </h3>
 <p align="center">
-  <img alt="Relational model" src="https://github.com/6IXTAVERN/TestingMD/assets/116119822/e064ee51-3f81-4e73-86c9-546c36dd731d.png"> 
+  <img alt="Relational model" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/68b31c0b-2fe4-422c-af63-a3adf6b76956"> 
 </p>
 
 
