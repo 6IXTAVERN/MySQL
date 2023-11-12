@@ -6,7 +6,7 @@
 </p>
 
 
-# <img src="https://github.com/6IXTAVERN/TestingMD/assets/116119822/c3b764d6-c2ef-4b9e-890d-ecc524c862b8.png" width="20" height="20"/> Lab1
+# <img src="https://github.com/6IXTAVERN/TestingMD/assets/116119822/c3b764d6-c2ef-4b9e-890d-ecc524c862b8" width="20" height="20"/> Lab1
 <h3 align="center">
   <a href="#er-model"></a>
   ER модель
