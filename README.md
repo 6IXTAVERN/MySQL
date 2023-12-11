@@ -94,7 +94,7 @@
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/44b4104d-aef8-4eaf-8925-e5428827872f">
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/1ca6d584-03fd-42c3-9b52-baf1522836d2"> 
 
-<p align="center"><i>Выбор брони, включающей в себя питание + заселение по которой запланировано не позднее 20 октября 2022 года</i>
+<p align="center"><i>Выбор брони, включающей в себя питание + заселение по которой запланировано не позднее 19 октября 2022 года</i>
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/7034f359-ce94-4dc7-84a6-b00dcc33f7eb">
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/8b0de04e-c2cd-464a-b2b9-a65f395ab85d"> 
 
@@ -103,15 +103,15 @@
   <a href="#client"></a>
   1.3 Использование агрегатных функций с группировкой и без
 </h3>
-<p align="center"><i>Найти количество комнат</i>
+<p align="center"><i>Найти количество номеров</i>
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/109075a5-4811-4d60-a763-8c239f1b4030">
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/0a226423-e6c9-46f5-85a0-324cd202e72e"> 
 
-<p align="center"><i>Найти количество комнат(группировка по этажам)</i>
+<p align="center"><i>Найти количество номеров(группировка по этажам)</i>
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/baa752c7-8e2c-41f1-8544-0b21b0a54c05">
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/1bdafa35-ebf4-4c8a-970f-3ba203daa87b"> 
 
-<p align="center"><i>Найти самый дорогостоящий тип комфортности номера</i>
+<p align="center"><i>Найти цену самого дорогостоящего типа комфортности номера</i>
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2cbafad2-4109-422e-bb8e-da932cfdc926">
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/4b3fb3fd-d4eb-4c82-8ebf-c5d9e89e317d"> 
 
@@ -245,8 +245,8 @@
   3.1 Создание представлений(VIEW)
 </h3>
 <p align="center"><i>Представление на основе -> [1.2.6 Выбрать этажи, на которых 3 и более комнат]</i>
-<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/863bf332-cdf5-43d0-9ec7-15f52db6845a">
-<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/7d359637-4027-4c1d-9dfa-591ae13b458b"> 
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/c7987086-be59-42f9-9564-6f7e26dc205c">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/fb7bb475-f487-4a37-8b8d-0e6ebda10622"> 
 
 <p align="center"><i>Представление на основе -> [1.2.6 Выбрать клиентов, у которых ровно 1 бронь]</i>
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/ab68d6ee-c29a-4cdd-bb40-c6f7e06526e6">
@@ -270,7 +270,7 @@
   <a href="#client"></a>
   4.1 Функции ранжирования(ROW_NUMBER, RANK, DENSE_RANK) [PARTITION BY]
 </h3>
-<p align="center"><i>Вывести и пронумеровать все типы комнат и id соответствующим им комнат</i>
+<p align="center"><i>Вывести и пронумеровать все типы номеров и id соответствующим им номеров</i>
 <p align="center"><i>ROW_NUMBER</i>
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2fe4ca85-9d33-412d-8d03-af30bd0ebfe3">
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/4674e45a-d1d9-44df-a9b4-408cc5d99a00"> 
