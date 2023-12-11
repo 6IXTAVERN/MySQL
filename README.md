@@ -108,12 +108,12 @@
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/0a226423-e6c9-46f5-85a0-324cd202e72e"> 
 
 <p align="center"><i>Найти количество комнат(группировка по этажам)</i>
-<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/78c4f07e-8e90-4ff5-bc6f-c55a038e20cc">
-<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/14408e1d-0aa9-4483-a134-ebdf8763c5ba"> 
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/baa752c7-8e2c-41f1-8544-0b21b0a54c05">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/1bdafa35-ebf4-4c8a-970f-3ba203daa87b"> 
 
 <p align="center"><i>Найти самый дорогостоящий тип комфортности номера</i>
-<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/e6f61f33-8b2e-40ed-a4e1-c55922efcb0c">
-<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/4e5ed216-15ec-440d-9ad7-aa524d5a6567"> 
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2cbafad2-4109-422e-bb8e-da932cfdc926">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/4b3fb3fd-d4eb-4c82-8ebf-c5d9e89e317d"> 
 
 <p align="center"><i>Найти бронь с самым поздним назначенным заездом(группировка по наличию питания)</i>
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/f3282b63-3ade-46e0-ad60-0bc3c6299d2c">
