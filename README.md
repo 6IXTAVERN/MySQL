@@ -146,4 +146,177 @@
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/968a02a0-7e05-47ea-95a6-c68fda1ef9bd"> 
 
 
+<h3 align="center">
+  <a href="#client"></a>
+  2.1 Классический подход соединения таблиц(WHERE)
+</h3>
+<p align="center"><i>Вывести для каждой брони ФИО клиента</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/d84c8ef5-13b4-41e5-9998-a4e0f6692265">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/72edf423-1535-4844-872e-f5c2f4c11572"> 
+
+<p align="center"><i>Вывести для каждого проживания дату заезда согласно бронированию</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/64212fe0-8112-486d-b38b-3aca25c3e6ce">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/0a8929ff-2c6e-4a47-bd01-739cccb8f719"> 
+
+
+<h3 align="center">
+  <a href="#client"></a>
+  2.2 Внутреннее соединение таблиц(INNER JOIN)
+</h3>
+<p align="center"><i>Вывести для каждой брони ФИО клиента</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/40447d06-fc2d-4dc8-9bee-8cab49aa2141">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/ec1aa262-ecea-447f-a110-4d561c3cd295"> 
+
+<p align="center"><i>Вывести для каждого проживания дату заезда согласно бронированию</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/5d7546e2-1ca9-4690-8406-36c2a8aafc88">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/0e9e2d65-5851-43a0-970a-d8ab9818b272"> 
+
+
+<h3 align="center">
+  <a href="#client"></a>
+  2.3 Левое внешнее соединение таблиц(LEFT OUTER JOIN)
+</h3>
+<p align="center"><i>Вывести для каждого клиента id его брони</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/290147fa-7ec1-4fe2-94be-9bbffe9c57f7">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/689fe4cb-59e2-442e-bf07-8d7d65317fa9"> 
+
+<p align="center"><i>Вывести для каждого типа комфортности соответствующие брони</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/6b5dea6a-e4a2-47aa-af21-c5db8ecec6b4">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/7c33b405-845e-4e60-bd29-1730fec7de8d">
+
+
+<h3 align="center">
+  <a href="#client"></a>
+  2.4 Правое внешнее соединение таблиц(RIGHT OUTER JOIN)
+</h3>
+<p align="center"><i>Вывести для каждого клиента id его брони</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/fcbbb1fb-7ab0-4e2b-97cb-6937c3ec0fb8">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/55863392-9c29-4e30-9c36-8593230dcf25"> 
+
+<p align="center"><i>Вывести для каждого типа комфортности соответствующие брони</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/8a5105b1-bd00-45e4-816a-cb2205674c30">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/8246bc5a-3d65-4eba-99f8-16e4d4c949ce">
+
+
+<h3 align="center">
+  <a href="#client"></a>
+  2.5 Агрегатные функции + группировка
+</h3>
+<p align="center"><i>Вывести минимальную стоимость номера на каждом этаже</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/46efc5b9-2ae4-4a64-b431-3af8252183ab">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/88cf365f-4df5-4d26-bfd4-a6c9f19050f2"> 
+
+<p align="center"><i>Вывести среднюю стоимость номера на каждом этаже</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/c5ebf36d-0c94-4294-8426-3a87a59898a2">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/5cd530ad-ddf7-4b9e-bfb6-7ef424b17ab0">
+
+
+<h3 align="center">
+  <a href="#client"></a>
+  2.6 Условие отбора групп(HAVING) + группировка
+</h3>
+<p align="center"><i>Выбрать этажи, на которых 3 и более комнат</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/1ed11460-10d8-4b8f-8e12-ed4a34ad6305">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/ef76a467-62bf-4bb4-b8f7-edaa851b81ce"> 
+
+<p align="center"><i>Выбрать клиентов, у которых ровно 1 бронь</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/b2b4645a-75f7-43e3-bd87-aed0a65360e4">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/94305c76-3b97-48ec-af94-8aaeb92c6424">
+
+
+<h3 align="center">
+  <a href="#client"></a>
+  2.7 Использование IN, EXISTS
+</h3>
+<p align="center"><i>Выбрать клиентов, у которых существует бронь</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/74e661a3-2c16-4828-8e3a-6035fa6bdb09">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/8516929b-74d7-44a9-b996-d55da7db47c0"> 
+
+<p align="center"><i>Выбрать клиентов, у которых дата заселения в какой-либо брони назначена на 5 мая 2023 года 21:00 или 15 мая 2023 года 10:00</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/675e189f-9ce0-41d1-90d7-781b62d9bcd1">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/37e41bb0-0eb6-420a-9f54-4409f775c0e9">
+
+<p align="center"><i>Выбрать типы комфортности номеров, которые существуют на данный момент в отеле (прим. номера с президентским люксом подготавливаются службой отеля, но пока таковых нет)</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/aa22c92f-9af1-42ee-adb7-311f51d147d5">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/15caac2d-34e8-4783-b951-30ec1c4082d3">
+
+<h3 align="center">
+  <a href="#client"></a>
+  3.1 Создание представлений(VIEW)
+</h3>
+<p align="center"><i>Представление на основе -> [1.2.6 Выбрать этажи, на которых 3 и более комнат]</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/863bf332-cdf5-43d0-9ec7-15f52db6845a">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/7d359637-4027-4c1d-9dfa-591ae13b458b"> 
+
+<p align="center"><i>Представление на основе -> [1.2.6 Выбрать клиентов, у которых ровно 1 бронь]</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/ab68d6ee-c29a-4cdd-bb40-c6f7e06526e6">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/26f716b2-577c-43c0-a67f-05825752c457">
+
+
+<h3 align="center">
+  <a href="#client"></a>
+  3.2 Использование общетабличных выражений (СТЕ)
+</h3>
+<p align="center"><i>Подсчитать общую стоимость дневной аренды всех номеров каждого типа</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/1e421016-0435-4808-a25e-350efea51f91">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/3e93c907-ea99-4aeb-adb4-6b39d9fbe61d"> 
+
+<p align="center"><i>Вывести среднюю цену номера на этаже</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/e0ce57bc-5b31-4ad9-a97a-eb349c21c843">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/17bde8f5-2d01-4f28-b485-108ba7c0a025">
+
+
+<h3 align="center">
+  <a href="#client"></a>
+  4.1 Функции ранжирования(ROW_NUMBER, RANK, DENSE_RANK) [PARTITION BY]
+</h3>
+<p align="center"><i>Вывести и пронумеровать все типы комнат и id соответствующим им комнат</i>
+<p align="center"><i>ROW_NUMBER</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2fe4ca85-9d33-412d-8d03-af30bd0ebfe3">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/4674e45a-d1d9-44df-a9b4-408cc5d99a00"> 
+
+<p align="center"><i>ROW_NUMBER + PARTITION BY</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/54217e49-38db-4369-a15d-de8c4ac9fe39">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/69aa24cb-ab27-45b2-b236-abb90ebd6f88">
+
+<p align="center"><i>RANK</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/d9e1ceb8-a921-4f37-9b65-00f58c7af335">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/440e6daa-1b87-46de-8d3a-572d3b1a1eb7"> 
+
+<p align="center"><i>DENSE_RANK</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/6e092cd2-f671-4577-af4d-3e064e1c4726">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/d60fce4c-ff38-4c4c-9cc7-258e175f2103"> 
+
+
+<h3 align="center">
+  <a href="#client"></a>
+  5.1 Объединение, пересечение, разность(UNION, EXCEPT, INTERSECT)
+</h3>
+<p align="center"><i>Вывести все номера типа 'Бизнес' находящиеся на 1 этаже и типа 'Эконом' на 3</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/906a7824-e4df-440e-a293-6acd85b7e006">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2e9c481f-ecd5-4b1b-a75d-9c25280b0022"> 
+
+<p align="center"><i>Вывести все номера с типом 'Обычный', находящиеся на 2 этаже</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/f048041b-340b-4b9a-987d-944aea891440">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/7f7b223d-bb83-485e-af09-e6c82a14c6cc">
+
+<p align="center"><i>Вывести все номера, за исключением тех, что располагаются на 2 этаже с возрастающей сортировкой по этажам</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/38c68082-e86c-495b-a075-ca9f08bb1956">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/07699381-1d14-4bff-82fa-58068beea0f6">
+
+
+<h3 align="center">
+  <a href="#client"></a>
+  6.1 Использование CASE
+</h3>
+<p align="center"><i>Вывести для каждого человека тип номера, забронированный им. Если ни одного номера нет, вернуть 'Нет забронированных номеров'</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/57b8347f-d0f5-4281-ac09-47c2f8c01d6e">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/d6bdaf47-23c5-47c9-beb8-5e1b8c572bd8"> 
+
+<p align="center"><i>Вывести, сколько раз на каждый из дней недели выпадало заселение согласно броне</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/e3eb46a9-aa8a-46c7-9ea5-69b2b82f2324">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/3a5c5cff-6a49-41e2-8040-c581664a4b80">
+
+
+
 
