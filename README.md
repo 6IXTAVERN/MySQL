@@ -3,7 +3,8 @@
 <p align="center">
   <a href="#-lab1"><img alt="lab1" src="https://img.shields.io/badge/Lab1-blue"></a> 
   <a href="#-lab2"><img alt="lab2" src="https://img.shields.io/badge/Lab2-red"></a>
-  <a href="#-lab3"><img alt="lab3" src="https://img.shields.io/badge/1-383838?label=Lab3&labelColor=8A2BE2"></a>
+  <a href="#-lab31"><img alt="lab3.1" src="https://img.shields.io/badge/1-383838?label=Lab3&labelColor=8A2BE2"></a>
+  <a href="#-lab32"><img alt="lab3.2" src="https://img.shields.io/badge/2-383838?label=Lab3&labelColor=8A2BE2"></a>
 </p>
 
 # <img src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2c2fe8b2-aba7-4fb0-bc48-6899135c5613" width="20" height="20"/> Lab1
@@ -68,7 +69,7 @@
 </p>
 
 
-# <img src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2c2fe8b2-aba7-4fb0-bc48-6899135c5613" width="20" height="20"/> Lab3
+# <img src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2c2fe8b2-aba7-4fb0-bc48-6899135c5613" width="20" height="20"/>Lab3.1
 <h3 align="center">
   <a href="#client"></a>
   1.1 Выборка и сортировка таблиц
@@ -317,6 +318,48 @@
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/e3eb46a9-aa8a-46c7-9ea5-69b2b82f2324">
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/3a5c5cff-6a49-41e2-8040-c581664a4b80">
 
+# <img src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2c2fe8b2-aba7-4fb0-bc48-6899135c5613" width="20" height="20"/>Lab3.2
+<h3 align="center">
+  <a href="#client"></a>
+  2.a Найти номера, не занятые и не забронированные на данный момент
+</h3>
+<p align="center"><i>Для тестирования добавил следующее(момент выполнения задания 23.12.2023 выпадает на созданную бронь, прикрепленную к номеру 3)</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/f2c20aa0-547b-4e95-af4f-31154eaae502">
+  
+<p align="center"><i>Сам запрос</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/d2da94e2-684a-4dc7-b80c-425b47d3d329">
+
+<p align="center"><i>Как видим, он отсутствует в конечной выборке</i>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/cb1a4f53-6807-4246-b0af-3a088ed732b1"> 
 
 
+<h3 align="center">
+  <a href="#client"></a>
+  2.b Найти клиентов, выехавших из номера раньше срока, указанного в договоре
+</h3>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/804d7f0e-092c-4d15-952a-9a3b8fb9511a">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/63544859-8d0f-4c29-97b1-5755d65c5f70">
 
+
+<h3 align="center">
+  <a href="#client"></a>
+  2.c Найти номера, которые ни разу не сдавались с начала текущего года
+</h3>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/d704b82a-608e-4aef-b747-2217051c00c1">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/592c30ab-b9d2-4386-812e-6f2f06149f6f">
+
+
+<h3 align="center">
+  <a href="#client"></a>
+  2.d Найти клиентов, забронировавших номер, но так и не въехавших в него
+</h3>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/ecb9b4bc-a39f-444b-bd3b-475738a6b025">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/d0548614-5c5c-4d89-9bb5-6b052d8cefb7">
+
+
+<h3 align="center">
+  <a href="#client"></a>
+  2.e Среди всех клиентов, наиболее часто пользующихся услугами гостиницы, найти клиентов с максимальным сроком проживания
+</h3>
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/537c3bd5-7924-44a2-93bd-bdb90352c56c">
+<p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/adf487b7-b1ab-47b1-a3e6-c6c0d8b88412">
