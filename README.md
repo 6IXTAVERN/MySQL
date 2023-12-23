@@ -3,8 +3,8 @@
 <p align="center">
   <a href="#-lab1"><img alt="lab1" src="https://img.shields.io/badge/Lab1-blue"></a> 
   <a href="#-lab2"><img alt="lab2" src="https://img.shields.io/badge/Lab2-red"></a>
-  <a href="#-lab31"><img alt="lab3.1" src="https://img.shields.io/badge/1-383838?label=Lab3&labelColor=8A2BE2"></a>
-  <a href="#-lab32"><img alt="lab3.2" src="https://img.shields.io/badge/2-383838?label=Lab3&labelColor=8A2BE2"></a>
+  <a href="#-lab3.1"><img alt="lab3.1" src="https://img.shields.io/badge/1-383838?label=Lab3&labelColor=8A2BE2"></a>
+  <a href="#-lab3.2"><img alt="lab3.2" src="https://img.shields.io/badge/2-383838?label=Lab3&labelColor=8A2BE2"></a>
 </p>
 
 # <img src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2c2fe8b2-aba7-4fb0-bc48-6899135c5613" width="20" height="20"/> Lab1
