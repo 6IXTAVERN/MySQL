@@ -3,8 +3,8 @@
 <p align="center">
   <a href="#-lab1"><img alt="lab1" src="https://img.shields.io/badge/Lab1-blue"></a> 
   <a href="#-lab2"><img alt="lab2" src="https://img.shields.io/badge/Lab2-red"></a>
-  <a href="#-lab31"><img alt="lab3.1" src="https://img.shields.io/badge/1-383838?label=Lab3&labelColor=8A2BE2"></a>
-  <a href="#-lab32"><img alt="lab3.2" src="https://img.shields.io/badge/2-383838?label=Lab3&labelColor=8A2BE2"></a>
+  <a href="#lab3.1"><img alt="lab3.1" src="https://img.shields.io/badge/1-383838?label=Lab3&labelColor=8A2BE2"></a>
+  <a href="#lab3.2"><img alt="lab3.2" src="https://img.shields.io/badge/2-383838?label=Lab3&labelColor=8A2BE2"></a>
 </p>
 
 # <img src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2c2fe8b2-aba7-4fb0-bc48-6899135c5613" width="20" height="20"/> Lab1
@@ -69,7 +69,7 @@
 </p>
 
 
-# <img src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2c2fe8b2-aba7-4fb0-bc48-6899135c5613" width="20" height="20"/>Lab3.1
+# <img src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2c2fe8b2-aba7-4fb0-bc48-6899135c5613" width="20" height="20"/> Lab3.1
 <h3 align="center">
   <a href="#client"></a>
   1.1 Выборка и сортировка таблиц
@@ -318,7 +318,7 @@
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/e3eb46a9-aa8a-46c7-9ea5-69b2b82f2324">
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/3a5c5cff-6a49-41e2-8040-c581664a4b80">
 
-# <img src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2c2fe8b2-aba7-4fb0-bc48-6899135c5613" width="20" height="20"/>Lab32
+# <img src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2c2fe8b2-aba7-4fb0-bc48-6899135c5613" width="20" height="20"/> Lab3.2
 <h3 align="center">
   <a href="#client"></a>
   2.a Найти номера, не занятые и не забронированные на данный момент
