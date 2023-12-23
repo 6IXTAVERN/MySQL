@@ -329,7 +329,7 @@
 <p align="center"><i>Сам запрос</i>
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/d2da94e2-684a-4dc7-b80c-425b47d3d329">
 
-<p align="center"><i>Как видим, он отсутствует в конечной выборке</i>
+<p align="center"><i>Как видим, номер с идентификатором 3 отсутствует в конечной выборке</i>
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/cb1a4f53-6807-4246-b0af-3a088ed732b1"> 
 
 
