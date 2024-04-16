@@ -363,3 +363,86 @@
 </h3>
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/537c3bd5-7924-44a2-93bd-bdb90352c56c">
 <p align="center"><img alt="client" src="https://github.com/6IXTAVERN/MySQL/assets/116119822/adf487b7-b1ab-47b1-a3e6-c6c0d8b88412">
+
+
+<h3 align="center">
+  <a href="#client"></a>
+  5.a Триггер на добавление брони – если дата заезда больше текущей на 6 месяцев – цена на такую бронь увеличивается на 10%
+</h3>
+
+```mysql
+CREATE TRIGGER SetReservationPrice
+BEFORE INSERT ON Reservation
+FOR EACH ROW
+BEGIN
+  DECLARE _price DECIMAL(10, 2);
+  DECLARE _days INT;
+  DECLARE _day_nutrition_price INT;
+
+  SET _day_nutrition_price = 10000;
+  SET _days = DATEDIFF(NEW.date_leaving, NEW.date_arrival);
+  SET _price = (SELECT price
+                FROM Comfortable
+                WHERE id_comfortable = NEW.id_comfortable) * _days;
+
+  IF NEW.date_arrival > DATE_ADD(CURDATE(), INTERVAL 6 MONTH) THEN
+    SET _price = _price * 1.1;
+  END IF;
+
+  # Стоимость питания не зависит от времени брони
+  IF NEW.nutrition = 1 THEN
+    SET _price = _price + _days * _day_nutrition_price;
+  END IF;
+
+  SET NEW.ovr_price = _price;
+END;
+```
+
+```mysql
+INSERT INTO Reservation (id_living, id_client, id_comfortable, date_arrival, date_leaving, nutrition, ovr_price)
+VALUES (16, 1, 1, '2024-12-05', '2024-12-15', 1, 0),
+       (17, 2, 2, '2024-05-10', '2024-05-15', 0, 0),
+       (18, 3, 3, '2024-08-20', '2024-08-25', 0, 0);
+```
+
+| id_reservation | id_client | id_comfortable | id_living | date_arrival        | date_leaving        | nutrition | ovr_price |
+|----------------|-----------|----------------|-----------|---------------------|---------------------|-----------|-----------|
+| 28             | 1         | 1              | 16        | 2024-12-05 00:00:00 | 2024-12-15 00:00:00 | 1         | 375000    |
+| 29             | 2         | 2              | 17        | 2024-05-10 00:00:00 | 2024-05-15 00:00:00 | 0         | 75000     |
+| 30             | 3         | 3              | 18        | 2024-08-20 00:00:00 | 2024-08-25 00:00:00 | 0         | 25000     |
+
+<h3 align="center">
+  <a href="#client"></a>
+  5.b Последующий триггер на изменение питания – клиент может передумать и отказаться от питания, либо же наоборот захочет включить его в свою бронь. Нужно пересчитать общую стоимость проживания по броне в зависимости от решения клиента.
+</h3>
+
+```mysql
+CREATE TRIGGER UpdateNutrition
+BEFORE UPDATE ON Reservation
+FOR EACH ROW
+BEGIN
+    DECLARE _day_nutrition_price INT;
+    SET _day_nutrition_price = 10000;
+
+    IF NEW.nutrition <> OLD.nutrition THEN
+        IF NEW.nutrition = 1 THEN
+            SET NEW.ovr_price = NEW.ovr_price + DATEDIFF(NEW.date_leaving, NEW.date_arrival) * _day_nutrition_price;
+        ELSE
+            SET NEW.ovr_price = NEW.ovr_price - DATEDIFF(NEW.date_leaving, NEW.date_arrival) * _day_nutrition_price;
+        END IF;
+    END IF;
+END;
+```
+
+```mysql
+# Вид брони с идентификатором 29 до следующей операции можно увидеть в задании выше
+UPDATE Reservation
+SET nutrition = 1
+WHERE id_reservation = 29;
+```
+
+| id_reservation | id_client | id_comfortable | id_living | date_arrival        | date_leaving        | nutrition | ovr_price |
+|----------------|-----------|----------------|-----------|---------------------|---------------------|-----------|-----------|
+| 29             | 2         | 2              | 17        | 2024-05-10 00:00:00 | 2024-05-15 00:00:00 | 1         | 125000    |
+
+
