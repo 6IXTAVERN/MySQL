@@ -6,6 +6,7 @@
   <a href="#-lab31"><img alt="lab3.1" src="https://img.shields.io/badge/1-383838?label=Lab3&labelColor=8A2BE2"></a>
   <a href="#-lab32"><img alt="lab3.2" src="https://img.shields.io/badge/2-383838?label=Lab3&labelColor=8A2BE2"></a>
   <a href="#-lab5"><img alt="lab5" src="https://img.shields.io/badge/Lab5-green"></a>
+  <a href="#-lab6"><img alt="lab6" src="https://img.shields.io/badge/Lab6-yellow"></a>
 </p>
 
 # <img src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2c2fe8b2-aba7-4fb0-bc48-6899135c5613" width="20" height="20"/> Lab1
@@ -562,7 +563,134 @@ WHERE id_room = 1;
 | 29 | 2 | 2 | 17 | 2024-05-10 00:00:00 | 2024-05-15 00:00:00 | 1 | 125000 |
 | 30 | 3 | 3 | 18 | 2024-08-20 00:00:00 | 2024-08-25 00:00:00 | 0 | 25000 |
 
+# <img src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2c2fe8b2-aba7-4fb0-bc48-6899135c5613" width="20" height="20"/> Lab6
+<h3 align="center">
+  <a href="#client"></a>
+  6.a Роль и пользователь для менеджера
+</h3>
+
+```mysql
+# Создание роли руководителя
+CREATE ROLE RoleManager;
+GRANT SELECT, INSERT, DELETE, UPDATE ON mydb.* TO RoleManager;
+
+# Создание пользователя с ролью руководителя
+CREATE USER 'UserManager'@`localhost` IDENTIFIED BY 'pass';
+GRANT RoleManager TO 'UserManager'@`localhost`;
+
+# Права на процедуры/функции можно выдать только пользователю напрямую
+GRANT EXECUTE ON FUNCTION funcA_GetLongestStayingClient TO RoleManager;
+GRANT EXECUTE ON PROCEDURE proc_getClientsWhereGreaterAvg TO 'UserManager'@`localhost`;
+
+# Обновление ролей
+FLUSH PRIVILEGES;
+```
+
+Для проверки:
+
+```mysql
+SHOW GRANTS FOR RoleManager;
+```
+
+| Grants for RoleManager@% |
+| :--- |
+| GRANT USAGE ON \*.\* TO \`RoleManager\`@\`%\` |
+| GRANT SELECT, INSERT, UPDATE, DELETE ON \`mydb\`.\* TO \`RoleManager\`@\`%\` |
+
+```mysql
+SHOW GRANTS FOR 'UserManager'@'localhost';
+```
+
+| Grants for UserManager@localhost |
+| :--- |
+| GRANT USAGE ON \*.\* TO \`UserManager\`@\`localhost\` |
+| GRANT EXECUTE ON PROCEDURE \`mydb\`.\`proc\_getclientswheregreateravg\` TO \`UserManager\`@\`localhost\` |
+| GRANT EXECUTE ON FUNCTION \`mydb\`.\`funca\_getlongeststayingclient\` TO \`UserManager\`@\`localhost\` |
+| GRANT \`RoleManager\`@\`%\` TO \`UserManager\`@\`localhost\` |
+
+
+<h3 align="center">
+  <a href="#client"></a>
+  6.b Роль и пользователь для сотрудника
+</h3>
+
+```mysql
+# Создание роли сотрудника
+CREATE ROLE RoleEmployee;
+GRANT SELECT (id_client, full_name, phone) ON mydb.client TO RoleEmployee;
+GRANT SELECT (id_client, date_arrival, date_leaving, nutrition, ovr_price) ON mydb.reservation TO RoleEmployee;
+
+# Создание пользователя с ролью сотрудника
+CREATE USER 'UserEmployee'@'localhost' IDENTIFIED BY 'pass';
+GRANT RoleEmployee TO 'UserEmployee'@'localhost';
+
+# Обновление ролей
+FLUSH PRIVILEGES;
+```
+
+Для проверки:
+
+```mysql
+SHOW GRANTS FOR RoleEmployee;
+```
+
+| Grants for RoleEmployee@% |
+| :--- |
+| GRANT USAGE ON \*.\* TO \`RoleEmployee\`@\`%\` |
+| GRANT SELECT \(\`full\_name\`, \`id\_client\`, \`phone\`\) ON \`mydb\`.\`client\` TO \`RoleEmployee\`@\`%\` |
+| GRANT SELECT \(\`date\_arrival\`, \`date\_leaving\`, \`id\_client\`, \`nutrition\`, \`ovr\_price\`\) ON \`mydb\`.\`reservation\` TO \`RoleEmployee\`@\`%\` |
+
+
+```mysql
+SHOW GRANTS FOR 'UserEmployee'@'localhost';
+```
+
+| Grants for UserEmployee@localhost |
+| :--- |
+| GRANT USAGE ON \*.\* TO \`UserEmployee\`@\`localhost\` |
+| GRANT \`RoleEmployee\`@\`%\` TO \`UserEmployee\`@\`localhost\` |
 
 
 
+## BONUS: права с разрешением передачи прав другому пользователю
+
+Права с разрешением передачи, как и использование процедур/функций, можно передать только конкретному пользователю напрямую:
+
+```mysql
+GRANT DELETE ON reservation TO 'UserManager'@`localhost` WITH GRANT OPTION;
+```
+
+К правам пользователя UserManager добавилась следующая строка:
+
+| Grants for UserManager@localhost |
+| :--- |
+| GRANT DELETE ON \`mydb\`.\`reservation\` TO \`UserManager\`@\`localhost\` WITH GRANT OPTION |
+
+Теперь авторизируемся под этим пользователем и проверим выдачу прав:
+
+```mysql
+GRANT DELETE ON mydb.reservation TO RoleEmployee;
+```
+
+Результат:
+
+| Grants for RoleEmployee@% |
+| :--- |
+| GRANT USAGE ON \*.\* TO \`RoleEmployee\`@\`%\` |
+| GRANT SELECT \(\`full\_name\`, \`id\_client\`, \`phone\`\) ON \`mydb\`.\`client\` TO \`RoleEmployee\`@\`%\` |
+| GRANT SELECT \(\`date\_arrival\`, \`date\_leaving\`, \`id\_client\`, \`nutrition\`, \`ovr\_price\`\), DELETE ON \`mydb\`.\`reservation\` TO \`RoleEmployee\`@\`%\` |
+
+
+Также, с этого пользователя(UserManager) мы можем отозвать выданное разрешение:
+```mysql
+REVOKE DELETE ON mydb.reservation FROM RoleEmployee;
+```
+
+Результат:
+
+| Grants for RoleEmployee@% |
+| :--- |
+| GRANT USAGE ON \*.\* TO \`RoleEmployee\`@\`%\` |
+| GRANT SELECT \(\`full\_name\`, \`id\_client\`, \`phone\`\) ON \`mydb\`.\`client\` TO \`RoleEmployee\`@\`%\` |
+| GRANT SELECT \(\`date\_arrival\`, \`date\_leaving\`, \`id\_client\`, \`nutrition\`, \`ovr\_price\`\) ON \`mydb\`.\`reservation\` TO \`RoleEmployee\`@\`%\` |
 
