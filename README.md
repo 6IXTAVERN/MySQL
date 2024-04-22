@@ -579,7 +579,7 @@ CREATE USER 'UserManager'@`localhost` IDENTIFIED BY 'pass';
 GRANT RoleManager TO 'UserManager'@`localhost`;
 
 # Права на процедуры/функции можно выдать только пользователю напрямую
-GRANT EXECUTE ON FUNCTION funcA_GetLongestStayingClient TO RoleManager;
+GRANT EXECUTE ON FUNCTION funcA_GetLongestStayingClient TO 'UserManager'@`localhost`;
 GRANT EXECUTE ON PROCEDURE proc_getClientsWhereGreaterAvg TO 'UserManager'@`localhost`;
 
 # Обновление ролей
