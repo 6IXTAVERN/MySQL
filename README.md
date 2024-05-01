@@ -750,3 +750,7 @@ SELECT * FROM Client WHERE client.id_client IN (12, 13);
   <a href="#client"></a>
   7.2 Подготовить SQL-скрипты для выполнения проверок изолированности транзакций.
 </h3>
+
+```mysql
+
+```
