@@ -751,6 +751,172 @@ SELECT * FROM Client WHERE client.id_client IN (12, 13);
   7.2 Подготовить SQL-скрипты для выполнения проверок изолированности транзакций.
 </h3>
 
-```mysql
+Далее для участков кода я буду приводить префикс-теги:  
+1) ```#___1___#``` исполняется на первом пользователе
+2) ```#___2___#``` исполняется на втором пользователе
+3) ```#___1___# + #___2___#``` исполняется и там, и там, независимо от порядка выполнения 
 
+```mysql
+-- 2. Установить в обоих сеансах уровень изоляции READ UNCOMMITTED
+#___1___# + #___2___#
+SET SESSION TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
 ```
+
+```mysql
+-- Потерянные изменения
+# Начинаем транзакцию и обновляем поле `full_name` в таблице `Client`. Если в другом окне выполнить
+# запрос `UPDATE`, то изменения данной транзакции могут быть перезаписаны,
+# что приведет к потере изменений после фиксации (`COMMIT`).
+#___1___#
+START TRANSACTION;
+UPDATE Client SET full_name = 'Name From First Transaction' WHERE id_client = 13;
+#___2___#
+START TRANSACTION;
+UPDATE Client SET full_name = 'Name From Second Transaction' WHERE id_client = 13;
+COMMIT;
+#___1___#
+COMMIT;
+```
+
+| id\_client | full\_name | passport | phone |
+| :--- | :--- | :--- | :--- |
+| 13 | Name From Second Transaction | 98 76 543210 | 79102281337 |
+
+```mysql
+-- Грязное чтение
+# Начинаем транзакцию и обновляем поле `full_name` в таблице `Client`. Если в другом окне выполнить
+# запрос `SELECT` для чтения измененных данных до того, как мы зафиксируем или откатим транзакцию,
+# то оно прочитает незафиксированные данные, что является грязным чтением.
+#___1___#
+START TRANSACTION;
+UPDATE Client SET full_name = 'Dirty Read' WHERE id_client = 13;
+#___2___#
+SELECT * FROM Client WHERE id_client = 13;
+#___1___#
+ROLLBACK;
+```
+
+| id\_client | full\_name | passport | phone |
+| :--- | :--- | :--- | :--- |
+| 13 | Dirty Read | 98 76 543210 | 79102281337 |
+
+```mysql
+-- 4. Установить в обоих сеансах уровень изоляции READ COMMITTED
+#___1___# + #___2___#
+SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED;
+```
+
+```mysql
+-- Грязное чтение
+# Повторим предыдущий сценарий и увидим, что грязное чтение больше не происходит
+#___1___#
+START TRANSACTION;
+UPDATE Client SET full_name = 'Dirty Read' WHERE id_client = 13;
+#___2___#
+SELECT * FROM Client WHERE id_client = 13;
+#___1___#
+ROLLBACK;
+```
+
+| id\_client | full\_name | passport | phone |
+| :--- | :--- | :--- | :--- |
+| 13 | Name From Second Transaction | 98 76 543210 | 79102281337 |
+
+```mysql
+-- Неповторяющееся чтение
+# Начинаем транзакцию и выполняем запрос `SELECT` из таблицы `Client`.
+# Если в другом окне выполнить запрос `UPDATE`, затем повторить запрос `SELECT` в первом окне,
+# то увидим, что данные изменились в течение одной и той же транзакции, что является неповторяющимся чтением.
+#___1___#
+START TRANSACTION;
+SELECT * FROM Client WHERE id_client = 13; #(1)
+#___2___#
+START TRANSACTION;
+UPDATE Client SET full_name = 'Changed Name' WHERE id_client = 13;
+COMMIT;
+#___1___#
+SELECT * FROM Client WHERE id_client = 13; #(2)
+COMMIT;
+```
+
+При первом SELECT(1):
+| id\_client | full\_name | passport | phone |
+| :--- | :--- | :--- | :--- |
+| 13 | Name From Second Transaction | 98 76 543210 | 79102281337 |
+
+При втором SELECT(2):
+| id\_client | full\_name | passport | phone |
+| :--- | :--- | :--- | :--- |
+| 13 | Changed Name | 98 76 543210 | 79102281337 |
+
+```mysql
+-- 6. Установить в обоих сеансах уровень изоляции REPEATABLE READ
+#___1___# + #___2___#
+SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ;
+```
+
+```mysql
+-- Неповторяющееся чтение
+# Повторим предыдущий сценарий и увидим, что неповторяющееся чтение больше не происходит
+#___1___#
+START TRANSACTION;
+SELECT * FROM Client WHERE id_client = 13; #(1)
+#___2___#
+START TRANSACTION;
+UPDATE Client SET full_name = 'Changed Name' WHERE id_client = 13;
+COMMIT;
+#___1___#
+SELECT * FROM Client WHERE id_client = 13; #(2)
+COMMIT;
+```
+
+При первом SELECT(1):
+| id\_client | full\_name | passport | phone |
+| :--- | :--- | :--- | :--- |
+| 13 | Standart Name | 98 76 543210 | 79102281337 |
+
+При втором SELECT(2):
+| id\_client | full\_name | passport | phone |
+| :--- | :--- | :--- | :--- |
+| 13 | Standart Name | 98 76 543210 | 79102281337 |
+
+По поводу фантомных чтений: в MySQL на уровне изоляции `REPEATABLE READ` проблема фантомных чтений неактуальна. И в PostgreSQL от них тоже избавились для данного уровня. 
+Хотя в классическом представлении этого уровня, мы должны наблюдать этот эффект(например, в MS SQL он присутствует).
+Подробнее:
+[REPEATABLE READ in MySQL](https://www.linkedin.com/pulse/db-isolation-levels-part-2-repeatable-read-tushar-goel#:~:text=In%20simple%20terms%2C%20a%20phantom%20read%20happens%20when%20the%20same%20query%20run%20twice%20within%20a%20transaction%20sees%20different%20results.%20MySQL%20avoids%20phantom%20rows%20in%20the%20Repeatable%20Read%20isolation%20level "Вырезка про repeatable read")
+
+Однако, все равно попытаемся:
+```mysql
+-- Фантомное чтение
+#___1___#
+START TRANSACTION;
+SELECT * FROM Client WHERE id_client > 10; #(1)
+#___2___#
+START TRANSACTION;
+INSERT INTO Client (id_client, full_name, passport, phone)
+VALUE (14, 'Test', '45 58 597152', '79151337228');
+COMMIT;
+#___1___#
+SELECT * FROM Client WHERE id_client > 10; #(2)
+COMMIT;
+```
+
+При первом SELECT(1):
+| id\_client | full\_name | passport | phone |
+| :--- | :--- | :--- | :--- |
+| 11 | Александр Романович Невский | 22 83 155478 | +79761234567 |
+| 12 | Иван Иванович Иванов | 45 59 597152 | 79101337228 |
+| 13 | Changed Name | 98 76 543210 | 79102281337 |
+
+При первом SELECT(2):
+| id\_client | full\_name | passport | phone |
+| :--- | :--- | :--- | :--- |
+| 11 | Александр Романович Невский | 22 83 155478 | +79761234567 |
+| 12 | Иван Иванович Иванов | 45 59 597152 | 79101337228 |
+| 13 | Changed Name | 98 76 543210 | 79102281337 |
+
+Как можем заметить, фантомных строк нет.
+
+
+
+
