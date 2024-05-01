@@ -694,3 +694,59 @@ REVOKE DELETE ON mydb.reservation FROM RoleEmployee;
 | GRANT SELECT \(\`full\_name\`, \`id\_client\`, \`phone\`\) ON \`mydb\`.\`client\` TO \`RoleEmployee\`@\`%\` |
 | GRANT SELECT \(\`date\_arrival\`, \`date\_leaving\`, \`id\_client\`, \`nutrition\`, \`ovr\_price\`\) ON \`mydb\`.\`reservation\` TO \`RoleEmployee\`@\`%\` |
 
+
+# <img src="https://github.com/6IXTAVERN/MySQL/assets/116119822/2c2fe8b2-aba7-4fb0-bc48-6899135c5613" width="20" height="20"/> Lab7
+<h3 align="center">
+  <a href="#client"></a>
+  7.1 Создать транзакцию, произвести ее откат и фиксацию. Показать, что данные существовали до отката, удалились после отката, снова были добавлены, и затем были успешно зафиксированы.
+</h3>
+
+```mysql
+-- Начинаем транзакцию
+START TRANSACTION;
+
+-- Добавляем нового клиента
+INSERT INTO Client (id_client, full_name, passport, phone)
+VALUES (12, 'Иван Иванович Иванов', '45 59 597152', '79101337228');
+
+-- Создаем точку сохранения
+SAVEPOINT savepoint1;
+
+-- Добавляем еще одного клиента
+INSERT INTO Client (id_client, full_name, passport, phone)
+VALUES (13, 'Петр Петрович Петров', '98 76 543210', '79102281337');
+
+-- Откатываем транзакцию до точки сохранения
+ROLLBACK TO savepoint1;
+
+-- Проверяем, что данные второго клиента были удалены после отката
+SELECT * FROM Client WHERE id_client IN (12, 13);
+```
+
+| id\_client | full\_name | passport | phone |
+| :--- | :--- | :--- | :--- |
+| 12 | Иван Иванович Иванов | 45 59 597152 | 79101337228 |
+
+
+```mysql
+-- Снова добавляем второго клиента
+INSERT INTO Client (id_client, full_name, passport, phone)
+VALUES (13, 'Петр Петрович Петров', '98 76 543210', '79102281337');
+
+-- Фиксируем транзакцию
+COMMIT;
+
+-- Проверяем, что данные обоих клиентов были успешно зафиксированы
+SELECT * FROM Client WHERE client.id_client IN (12, 13);
+```
+
+| id\_client | full\_name | passport | phone |
+| :--- | :--- | :--- | :--- |
+| 12 | Иван Иванович Иванов | 45 59 597152 | 79101337228 |
+| 13 | Петр Петрович Петров | 98 76 543210 | 79102281337 |
+ 
+
+<h3 align="center">
+  <a href="#client"></a>
+  7.2 Подготовить SQL-скрипты для выполнения проверок изолированности транзакций.
+</h3>
